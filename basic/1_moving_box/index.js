@@ -1,9 +1,21 @@
 import Movement from './Movement.js';
-import MouseMove from './MouseMove.js';
+import MouseCoordinate from './MouseCoordinate.js';
+import { $ } from '../../lib/utils/util.js';
+
+const mouseMovementFactory = ($box, eventType) => {
+  new Movement($box, new MouseCoordinate(eventType));
+};
+
+const moveBox = () => {
+  mouseMovementFactory($('.box1'));
+};
+const clickBox = () => {
+  mouseMovementFactory($('.box2'), 'click');
+};
 
 const init = () => {
-  const $box = document.querySelector('.moving_box');
-  new Movement($box, new MouseMove());
+  moveBox();
+  clickBox();
 };
 
 window.addEventListener('DOMContentLoaded', init);

@@ -1,7 +1,7 @@
 export default class Movement {
-  constructor($box, mousemove, speed = 0.05) {
+  constructor($box, mouseCoordinate, speed = 0.05) {
     this.$box = $box;
-    this.mousemove = mousemove;
+    this.mouseCoordinate = mouseCoordinate;
     this.speed = speed;
 
     this.mx = 0;
@@ -14,8 +14,9 @@ export default class Movement {
     this.move();
   }
   setMovingCoordinate() {
-    this.mx += (this.mousemove.x - this.mx) * this.speed;
-    this.my += (this.mousemove.y - this.my) * this.speed;
+    const { x, y } = this.mouseCoordinate;
+    this.mx += (x - this.mx) * this.speed;
+    this.my += (y - this.my) * this.speed;
   }
   setTranslate() {
     this.$box.style.transform = `translate(${this.mx}px, ${this.my}px)`;
