@@ -22,7 +22,7 @@ export default class MouseCoordinate {
   }
 
   setCoordinate({ clientX, clientY }) {
-    this._x = clientX;
-    this._y = clientY;
+    this._x = clientX - window.innerWidth / 2;
+    this._y = clientY - window.innerHeight / 2;
   }
 }

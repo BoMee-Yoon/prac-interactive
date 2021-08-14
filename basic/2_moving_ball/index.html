@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        /* background-color: wheat; */
+        position: relative;
+        overflow: hidden;
+      }
+      .background {
+        width: 100vw;
+        height: 100vh;
+      }
+      #bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        mix-blend-mode: hue;
+      }
+      .ball {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        left: calc(50% - 150px);
+        top: 150px;
+        clip-path: circle(140px at center);
+        background: transparent;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bg">
+      <img
+        class="background"
+        src="https://ae01.alicdn.com/kf/HTB1mdg0iZnI8KJjSspeq6AwIpXau/Fondo-de-vinilo-para-estudio-fotogr-fico-10x10-pies-puntos-azules-oscuros-luz-estadio-f-tbol.jpg_q50.jpg"
+        alt=""
+      />
+      <img
+        class="ball"
+        src="https://toppng.com/uploads/preview/soccer-ball-11547030791eh59fn2utb.png"
+        alt=""
+      />
+    </div>
+  </body>
+  <script src="index.js" type="module"></script>
+</html>
